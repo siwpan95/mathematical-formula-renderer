@@ -1,0 +1,27 @@
+{
+  "name": "超级公式_棋盘反应相位",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5*sin(x*1.0*pi)*sin(y*1.0*pi)"
+    }
+  },
+  "evolution": {
+    "rule": "c + 1.0*(avg_n - c) + 1.0*c*(0.5 - c)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5+0.5*cos(2*pi*v*1.0+0.5)",
+    "green": "0.5+0.5*cos(2*pi*v*1.0+0.5)",
+    "blue": "0.5+0.5*cos(2*pi*v*1.0+0.5)"
+  },
+  "id": 154
+}

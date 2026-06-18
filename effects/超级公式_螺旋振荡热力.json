@@ -1,0 +1,28 @@
+{
+  "name": "超级公式_螺旋振荡热力",
+  "version": "1.0",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5*sin(1.0*atan2(y-0.5, x-0.5) + 1.0*10*sqrt((x-0.5)**2 + (y-0.5)**2))"
+    }
+  },
+  "evolution": {
+    "rule": "c + 1.0*(avg_n - c) + 1.0*sin(t*0.1)",
+    "variables": [
+      "c",
+      "avg_n",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "clip(v*1.0, 0, 1)",
+    "green": "clip(v*(1-v)*1.0*4, 0, 1)",
+    "blue": "clip((1-v)*1.0, 0, 1)"
+  },
+  "id": 166
+}

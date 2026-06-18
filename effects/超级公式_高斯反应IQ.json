@@ -1,0 +1,27 @@
+{
+  "name": "超级公式_高斯反应IQ",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "exp(-((x-0.5)**2 + (y-0.5)**2) / (0.1*(1+0.5)))"
+    }
+  },
+  "evolution": {
+    "rule": "c + 1.0*(avg_n - c) + 1.0*sin(c*20)/(1 + 0.5*abs(avg_n - c))",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5+0.5*cos(2*pi*(v*0.5+0.0))",
+    "green": "0.5+0.5*cos(2*pi*(v*0.5+0.0))",
+    "blue": "0.5+0.5*cos(2*pi*(v*0.5+0.0))"
+  },
+  "id": 169
+}
