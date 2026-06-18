@@ -1,0 +1,27 @@
+{
+  "name": "螺旋_BZ_Aurora",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if ((atan2(y-0.5, x-0.5) / (2*pi) + sqrt((x-0.5)**2 + (y-0.5)**2) * 2) % 1 < 0.5) else 0"
+    }
+  },
+  "evolution": {
+    "rule": "1 if (c > 0.5) else (0.5 if sum_n > 1 else c)",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "v",
+    "blue": "v"
+  },
+  "id": 144
+}

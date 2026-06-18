@@ -1,0 +1,27 @@
+{
+  "name": "棋盘_超级阈值_反色",
+  "version": "1.0",
+  "grid": {
+    "width": 200,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if ((int(x*20) + int(y*20)) % 2 == 0) else 0"
+    }
+  },
+  "evolution": {
+    "rule": "clip(c + f1*(avg_n - c) + f2*(0.5 - abs(c - 0.5)), 0, 1)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "1-v",
+    "green": "1-v",
+    "blue": "1-v"
+  },
+  "id": 118
+}
