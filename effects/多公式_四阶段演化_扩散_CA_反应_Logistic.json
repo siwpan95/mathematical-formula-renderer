@@ -1,0 +1,30 @@
+{
+  "name": "多公式_四阶段演化_扩散_CA_反应_Logistic",
+  "version": "2.0",
+  "description": "演化分4阶段：扩散→CA→反应扩散→Logistic，用 t 控制切换",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "random()"
+    }
+  },
+  "evolution": {
+    "rule": "(where(t < 50, c + 0.2*(avg_n - c), 1) + where((t >= 50) & (t < 100), where((c > 0.5) & (sum_n >= 2) & (sum_n <= 3) | (c <= 0.5) & (sum_n == 3), 1, 0), 1) + where((t >= 100) & (t < 200), c + 0.1*(avg_n - c) + 0.1*c*(1-c), 1) + where(t >= 200, 3.8*c*(1-c), 0)) / 4",
+    "variables": [
+      "c",
+      "sum_n",
+      "avg_n",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "2*v*(1-v)",
+    "blue": "1-v"
+  },
+  "id": 103
+}

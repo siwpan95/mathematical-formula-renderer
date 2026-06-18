@@ -1,0 +1,27 @@
+{
+  "name": "对数螺旋_超级反应_相位",
+  "version": "1.0",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if (log(sqrt((x-0.5)**2 + (y-0.5)**2) + 0.001) * atan2(y-0.5, x-0.5)) % 1 < 0.5 else 0"
+    }
+  },
+  "evolution": {
+    "rule": "c + f1*(avg_n - c) + f2*sin(c*20)/(1 + w1*abs(avg_n - c))",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5+0.5*cos(2*pi*v*f1+p1)",
+    "green": "0.5+0.5*cos(2*pi*v*f2+p2)",
+    "blue": "0.5+0.5*cos(2*pi*v*f3+p3)"
+  },
+  "id": 109
+}
