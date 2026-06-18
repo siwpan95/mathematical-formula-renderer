@@ -1,0 +1,27 @@
+{
+  "name": "畴壁_相分离_夕阳",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5*tanh(20*(x-0.5))"
+    }
+  },
+  "evolution": {
+    "rule": "c + 0.2*(avg_n - c) - 0.1*(c - 0.5)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "v",
+    "blue": "v"
+  },
+  "id": 135
+}

@@ -1,0 +1,28 @@
+{
+  "name": "超级公式_正弦场振荡相位",
+  "version": "1.0",
+  "grid": {
+    "width": 200,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5*sin(x*1.0*20)*cos(y*1.0*20)"
+    }
+  },
+  "evolution": {
+    "rule": "c + 1.0*(avg_n - c) + 1.0*sin(t*0.1)",
+    "variables": [
+      "c",
+      "avg_n",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5+0.5*cos(2*pi*v*1.0+0.5)",
+    "green": "0.5+0.5*cos(2*pi*v*1.0+0.5)",
+    "blue": "0.5+0.5*cos(2*pi*v*1.0+0.5)"
+  },
+  "id": 159
+}
