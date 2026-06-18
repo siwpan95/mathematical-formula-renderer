@@ -1,0 +1,41 @@
+{
+  "name": "曲率驱动_界面流",
+  "version": "1.0",
+  "description": "平均曲率流（MCF）启发式简化。界面运动速度正比于局部曲率——凸出部分收缩、凹陷部分膨胀，最终趋于光滑圆形。类比肥皂膜/晶界迁移",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": false,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if abs(x-0.5)+abs(y-0.5)<0.25 else 0"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.3*(avg_n - c) - 0.12*(c-0.5)*(c-0.5)*(c-0.5) + 0.02*sin(8*atan2(y-0.5,x-0.5))*c*(1-c)",
+    "variables": [
+      "c",
+      "avg_n",
+      "x",
+      "y"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.1 + 0.9*v",
+    "green": "0.3 + 0.7*abs(v-0.5)*2",
+    "blue": "1.0 - v"
+  },
+  "tick": {
+    "fps": 24,
+    "steps_per_frame": 3
+  },
+  "cycle": {
+    "steps": 300
+  },
+  "id": 117
+}

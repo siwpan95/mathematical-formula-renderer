@@ -1,0 +1,28 @@
+{
+  "name": "双螺旋_超级振荡_热力",
+  "version": "1.0",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if (sin(10*atan2(y-0.5, x-0.5) + 5*sqrt((x-0.5)**2 + (y-0.5)**2)) > 0) else 0"
+    }
+  },
+  "evolution": {
+    "rule": "c + f1*(avg_n - c) + f2*sin(t*0.1)",
+    "variables": [
+      "c",
+      "avg_n",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "clip(v*f1, 0, 1)",
+    "green": "clip(v*(1-v)*f2*4, 0, 1)",
+    "blue": "clip((1-v)*f3, 0, 1)"
+  },
+  "id": 91
+}
