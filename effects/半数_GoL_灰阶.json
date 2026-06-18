@@ -1,0 +1,27 @@
+{
+  "name": "半数_GoL_灰阶",
+  "version": "1.0",
+  "grid": {
+    "width": 200,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if random() > 0.5 else 0"
+    }
+  },
+  "evolution": {
+    "rule": "1 if (c > 0.5 and sum_n >= 2 and sum_n <= 3) or (c <= 0.5 and sum_n == 3) else 0",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "v",
+    "blue": "v"
+  },
+  "id": 81
+}

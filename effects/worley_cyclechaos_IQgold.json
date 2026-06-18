@@ -1,0 +1,40 @@
+{
+  "name": "Worley噪声 × 周期驱动混沌 × IQ蓝金",
+  "version": "1.0",
+  "description": "细胞噪声初始场 + 双频周期驱动混沌振荡 + IQ蓝金对比配色。Voronoi状纹理在混沌驱动下持续变形重组，金色振荡带在蓝色基底上流动",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "minimum(minimum(sqrt((x-0.15)**2+(y-0.2)**2), sqrt((x-0.75)**2+(y-0.3)**2)), minimum(sqrt((x-0.4)**2+(y-0.7)**2), sqrt((x-0.85)**2+(y-0.8)**2)))"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "(c + 0.25*sin(c*8.0 + t*0.15) + 0.18*sin(c*13.0 + t*0.23) + 0.1*(avg_n-c)) / 1.4",
+    "variables": [
+      "c",
+      "avg_n",
+      "t"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5 + 0.5*cos(6.28318*(2.0*v+0.50))",
+    "green": "0.5 + 0.5*cos(6.28318*(1.0*v+0.20))",
+    "blue": "0.5 + 0.5*cos(6.28318*(0.0*v+0.25))"
+  },
+  "tick": {
+    "fps": 22,
+    "steps_per_frame": 1
+  },
+  "cycle": {
+    "steps": 400
+  },
+  "id": 73
+}
