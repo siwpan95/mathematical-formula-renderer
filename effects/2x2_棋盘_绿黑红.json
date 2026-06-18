@@ -1,0 +1,27 @@
+{
+  "name": "2x2_棋盘_绿黑红",
+  "version": "1.0",
+  "grid": {
+    "width": 200,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if ((int(x*20) + int(y*20)) % 2 == 0) else 0"
+    }
+  },
+  "evolution": {
+    "rule": "1 if (c > 0.5 and sum_n in [1, 2, 5]) or (c <= 0.5 and sum_n in [3, 6]) else 0",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "0",
+    "blue": "1-v"
+  },
+  "id": 1
+}
