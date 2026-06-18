@@ -1,0 +1,39 @@
+{
+  "name": "正方形阵列 × 双温扩散 × IQ冰蓝",
+  "version": "1.0",
+  "description": "8×6规则正方形点阵初始态 + 双向温度扩散（冷热锋面碰撞） + IQ冰蓝冷色调。点阵化为扩散波源，冷热区域对立传播碰撞产生复杂干涉网格",
+  "grid": {
+    "width": 256,
+    "height": 192,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "max(exp(-(((x-0.5)*8)%1 - 0.5)**2/0.004), exp(-(((y-0.5)*6)%1 - 0.5)**2/0.004))"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.18*(avg_n-c) - 0.15*(c-0.5)*(avg_n-0.5)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5 + 0.5*cos(6.28318*(v+0.30))",
+    "green": "0.5 + 0.5*cos(6.28318*(v+0.20))",
+    "blue": "0.5 + 0.5*cos(6.28318*(v+0.20))"
+  },
+  "tick": {
+    "fps": 22,
+    "steps_per_frame": 2
+  },
+  "cycle": {
+    "steps": 350
+  },
+  "id": 29
+}

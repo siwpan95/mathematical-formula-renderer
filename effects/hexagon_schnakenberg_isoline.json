@@ -1,0 +1,39 @@
+{
+  "name": "正六边形 × Schnakenberg图灵 × 等值线色谱",
+  "version": "1.0",
+  "description": "正六边形镶嵌初始场 + Schnakenberg活化-抑制图灵斑图演化 + 多色等值线配色。六边形失稳后产生规律性图灵斑点阵列，等值线色带清晰标定各浓度层",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "0.5 + 0.5*cos(x*21.77)*cos((x*0.5 + y*0.866)*25.13)"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.2*(avg_n - c) + 0.06 - 0.08*c*c",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "abs(sin(v*24))*0.8 + 0.2",
+    "green": "abs(sin(v*24 + 2.094))*0.8 + 0.2",
+    "blue": "abs(sin(v*24 + 4.189))*0.8 + 0.2"
+  },
+  "tick": {
+    "fps": 22,
+    "steps_per_frame": 2
+  },
+  "cycle": {
+    "steps": 350
+  },
+  "id": 31
+}

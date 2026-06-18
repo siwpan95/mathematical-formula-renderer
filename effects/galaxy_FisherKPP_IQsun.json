@@ -1,0 +1,39 @@
+{
+  "name": "银河臂 × Fisher-KPP × IQ日落",
+  "version": "1.0",
+  "description": "对数螺旋银河臂初始态 + Fisher-KPP传播波前演化 + IQ余弦暖日落配色。波前沿着螺旋臂向外匀速传播，产生星系旋转的视觉效果。需 wrap=False",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": false,
+    "initial": {
+      "type": "formula",
+      "expression": "0.8*exp(-((atan2(y-0.5,x-0.5)*4 + log(sqrt((x-0.5)**2+(y-0.5)**2)*8+0.01))%1.571 - 0.1)**2/0.003)"
+    }
+  },
+  "neighborhood": {
+    "type": "moore",
+    "radius": 1
+  },
+  "evolution": {
+    "rule": "c + 0.12*(avg_n-c) + 0.06*c*(1-c)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5 + 0.5*cos(6.28318*(v+0.00))",
+    "green": "0.5 + 0.5*cos(6.28318*(0.7*v+0.15))",
+    "blue": "0.5 + 0.5*cos(6.28318*(0.4*v+0.20))"
+  },
+  "tick": {
+    "fps": 20,
+    "steps_per_frame": 1
+  },
+  "cycle": {
+    "steps": 500
+  },
+  "id": 20
+}

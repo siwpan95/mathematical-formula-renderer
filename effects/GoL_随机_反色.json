@@ -1,0 +1,27 @@
+{
+  "name": "GoL_随机_反色",
+  "version": "1.0",
+  "grid": {
+    "width": 300,
+    "height": 300,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "random()"
+    }
+  },
+  "evolution": {
+    "rule": "1 if (c > 0.5 and sum_n >= 2 and sum_n <= 3) or (c <= 0.5 and sum_n == 3) else 0",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "1-v",
+    "green": "1-v",
+    "blue": "1-v"
+  },
+  "id": 25
+}
