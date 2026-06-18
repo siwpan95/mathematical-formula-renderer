@@ -1,0 +1,27 @@
+{
+  "name": "Sierpinski_HighLife_彩虹",
+  "version": "1.0",
+  "grid": {
+    "width": 200,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if (sin(x*511*pi)*sin(y*511*pi) > 0) else 0"
+    }
+  },
+  "evolution": {
+    "rule": "1 if (c > 0.5 and sum_n in [2, 3]) or (c <= 0.5 and sum_n in [3, 6]) else 0",
+    "variables": [
+      "c",
+      "sum_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5+0.5*sin(2*pi*v)",
+    "green": "0.5+0.5*sin(2*pi*v+2*pi/3)",
+    "blue": "0.5+0.5*sin(2*pi*v+4*pi/3)"
+  },
+  "id": 56
+}
