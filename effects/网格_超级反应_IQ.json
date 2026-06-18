@@ -1,0 +1,27 @@
+{
+  "name": "网格_超级反应_IQ",
+  "version": "1.0",
+  "grid": {
+    "width": 200,
+    "height": 200,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "1 if (sin(x*30) * sin(y*30) > 0) else 0"
+    }
+  },
+  "evolution": {
+    "rule": "c + f1*(avg_n - c) + f2*sin(c*20)/(1 + w1*abs(avg_n - c))",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "0.5+0.5*cos(2*pi*(v*p1+d1))",
+    "green": "0.5+0.5*cos(2*pi*(v*p2+d2))",
+    "blue": "0.5+0.5*cos(2*pi*(v*p3+d3))"
+  },
+  "id": 142
+}

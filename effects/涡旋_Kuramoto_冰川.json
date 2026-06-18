@@ -1,0 +1,27 @@
+{
+  "name": "涡旋_Kuramoto_冰川",
+  "version": "1.0",
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "wrap": true,
+    "initial": {
+      "type": "formula",
+      "expression": "atan2(y-0.5, x-0.5) / (2*pi) % 1"
+    }
+  },
+  "evolution": {
+    "rule": "c + 0.01*sin(avg_n - c)",
+    "variables": [
+      "c",
+      "avg_n"
+    ]
+  },
+  "color": {
+    "mode": "per_channel",
+    "red": "v",
+    "green": "v",
+    "blue": "v"
+  },
+  "id": 123
+}
