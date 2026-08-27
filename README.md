@@ -285,7 +285,7 @@ MIT
 
 ---
 
-## 仓库索引标注（2026-08-25 · siwpan 统一治理）
+## 仓库索引标注（2026-08-27 · siwpan 统一治理）
 
-> CA Render Engine 早期三版（master/2.0/3.0）；现行演进：本地终版 draw（G:\media\_archive\draw，已归档）→ 配方/公式引擎并入 pywallpaper → J2 并入 alloy/media（G:\games\alloy\media）。
+> CA Render Engine 早期三版（master/2.0/3.0 → 已转 tag 2.0/3.0）；现行演进：本地终版 draw（已归档）→ 配方/公式引擎并入 pywallpaper → J2 并入 alloy/media（现行位置 G:\repos\an-engine\media）。
 > 本标注为发布面统一追加，不改变原有内容。
